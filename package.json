@@ -1,8 +1,8 @@
 {
   "name": "00-nuxt",
   "version": "1.0.0",
-  "description": "My super-excellent Nuxt.js project",
-  "author": "Thomas",
+  "description": "Colloque international - l'esprit curieux",
+  "author": "thomas.sypniewski@gmail.com",
   "private": true,
   "scripts": {
     "dev": "nuxt",
