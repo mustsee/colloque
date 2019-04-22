@@ -45,7 +45,17 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vuetify'],
+  plugins: [
+      '@/plugins/vuetify',
+      '~/plugins/i18n.js'
+  ],
+
+  router: {
+    middleware: 'i18n'
+  },
+  generate: {
+    routes: ['/', '/fr', '/it', '/pl']
+  },
 
   /*
    ** Nuxt.js modules

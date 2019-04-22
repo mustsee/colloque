@@ -1,0 +1,41 @@
+{
+  "index": {
+    "title": "Colloque international - l'esprit curieux - octobre 2019",
+    "title-1": "« L’Esprit curieux. Collectionner en Europe",
+    "title-2": "(de Vasari à nos jours) »",
+    "title-3": "Colloque international organisé par la Bibliothèque Polonaise",
+    "title-4": "Paris, les 24 et 25 octobre 2019",
+    "items": [
+      {
+        "index": 1,
+        "step": "Organisation",
+        "texts": [
+          "La Société Historique et Littéraire Polonaise (Bibliothèque Polonaise de Paris) en collaboration avec l’Académie Polonaise des Sciences de Paris.",
+          "Lieu : Bibliothèque Polonaise de Paris, 6 Quai d'Orléans 75004 Paris"
+        ]
+      },
+      {
+        "index": 2,
+        "step": "Objectif",
+        "texts": [
+          "L'objectif du colloque est de réunir des représentants du milieu universitaire et muséal de trois pays différents (France, Italie,  Pologne) afin d'interroger la notion d'unité européenne à travers l'acte de collectionner, spécifique à la culture du Vieux Continent."
+        ]
+      },
+      {
+        "index": 3,
+        "step": "Evènement",
+        "texts": [
+          "Nous célébrerons le 70ème anniversaire de la mort de Camille Gronkowski (1873-1949), collectionneur majeur et bienfaiteur de la Bibliothèque Polonaise de Paris.",
+          "Ce sera l'occasion de présenter une exposition temporaire consacrée à la collection de Camille Gronkowski qui fut l’un de premiers conservateurs du Petit Palais."
+        ]
+      },
+      {
+        "index": 4,
+        "step": "Publications",
+        "texts": [
+          "A l'issu du colloque, nous publierons les actes et nous rendrons disponible les vidéos enregistrées sur un site dédié."
+        ]
+      }
+    ]
+  }
+}

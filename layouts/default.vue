@@ -1,6 +1,8 @@
 <template>
   <v-app>
     <v-toolbar
+      scroll-off-screen
+      :scroll-threshold="400"
       fixed
       app
       flat
@@ -16,13 +18,25 @@
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on }">
             <div class="langButton px-3" v-on="on">
-              <div class="subheading" style="font-family: arial">FR</div>
+              <div class="subheading" style="font-family: arial">
+                {{ $store.state.locale.toUpperCase() }}
+              </div>
               <v-icon>arrow_drop_down</v-icon>
             </div>
           </template>
           <v-list>
             <v-list-tile v-for="(item, index) in items" :key="index">
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>
+                <NuxtLink
+                  v-if="$i18n.locale === 'fr'"
+                  :to="`/${item.lang}` + $route.fullPath"
+                >
+                  {{ item.lang.toUpperCase() }}
+                </NuxtLink>
+                <NuxtLink v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')">
+                  {{ item.lang.toUpperCase() }}
+                </NuxtLink>
+              </v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -43,14 +57,12 @@ export default {
     return {
       items: [
         {
-          icon: 'apps',
-          title: 'EN',
+          lang: 'fr',
           to: '/'
         },
         {
-          icon: 'bubble_chart',
-          title: 'FR',
-          to: '/inspire'
+          lang: 'en',
+          to: '/en'
         }
       ],
       title: `L'Esprit curieux`

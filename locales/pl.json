@@ -1,0 +1,12 @@
+{
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "english": "English version",
+    "french": "French version"
+  },
+  "home": {
+    "title": "PL",
+    "introduction": "This is an introduction in POLISH."
+  }
+}
