@@ -1,70 +1,115 @@
-<template>
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
   <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat"
-              >discord</a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-              >issue board</a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank"
-            >Nuxt GitHub</a
-          >
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
+    <v-flex xs12>
+      <v-flex xs12 md10 offset-md1>
+        <v-card class="my-3 py-4" hover>
+          <v-flex xs10 offset-xs1>
+            <v-card-title class="display-2 pt-5 pb-3 justify-center">
+              <div class="text-xs-center">
+                « L’Esprit curieux. Collectionner en Europe
+              </div>
+              <div class="text-xs-center">
+                (de Vasari à nos jours) »
+              </div>
+            </v-card-title>
+            <v-card-title class="display-1 pb-3 justify-center">
+              <div class="text-xs-center" style="font-style: italic">
+                Colloque international organisé par la Bibliothèque Polonaise
+              </div>
+            </v-card-title>
+            <v-card-title class="headline pb-3 justify-center">
+              <div class="text-xs-center">
+                Paris, les 24 et 25 octobre 2019
+              </div>
+            </v-card-title>
+          </v-flex>
+          <v-flex xs12 sm10 offset-sm1 lg8 offset-lg2>
+            <v-timeline class="my-5">
+              <v-timeline-item
+                v-for="item in items"
+                :key="item.index"
+                :color="`amber darken-${item.index}`"
+                large
+              >
+                <template v-slot:opposite>
+                  <span class="subheading"></span>
+                </template>
+                <v-card class="elevation-2">
+                  <v-card-title class="headline" style="overflow: hidden">
+                    {{ item.step }}
+                  </v-card-title>
+                  <v-card-text>
+                    <div
+                      v-for="text in item.texts"
+                      :key="text"
+                      class="text-xs-left pb-2"
+                    >
+                      {{ text }}
+                    </div>
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>
+          </v-flex>
+          <v-card-text>
+            <hr class="my-3" />
+            <div class="subheading pa-5 text-xs-center">
+              Contact : <a target="_blank">agnieszka.wiatrzyk@gmail.com</a>
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-flex>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  data() {
+    return {
+      items: [
+        {
+          index: 1,
+          step: 'Organisation',
+          texts: [
+            `La Société Historique et Littéraire Polonaise
+              (Bibliothèque Polonaise de Paris) en collaboration avec
+              l’Académie Polonaise des Sciences de Paris.`,
+            `Lieu : Bibliothèque Polonaise de Paris, 6 Quai d'Orléans,
+              75004 Paris`
+          ]
+        },
+        {
+          index: 2,
+          step: 'Objectif',
+          texts: [
+            `L'objectif du colloque est de réunir des représentants
+          du milieu universitaire et muséal de trois pays différents (France, Italie,  Pologne) afin
+          d'interroger la notion d'unité européenne à travers l'acte de
+          collectionner, spécifique à la culture du Vieux Continent.`
+          ]
+        },
+        {
+          index: 3,
+          step: 'Evènement',
+          texts: [
+            `Nous célébrerons le 70ème
+anniversaire de la mort de Camille Gronkowski (1873-1949),
+collectionneur majeur et bienfaiteur de la Bibliothèque Polonaise de Paris.`,
+            `Ce sera l'occasion de présenter une exposition temporaire consacrée à la collection
+de Camille Gronkowski qui fut l’un de premiers conservateurs du Petit Palais,`
+          ]
+        },
+        {
+          index: 4,
+          step: 'Publications',
+          texts: [
+            `A l'issu du colloque, nous publierons les actes et nous rendrons
+            disponible les vidéos enregistrées sur un site dédié.`
+          ]
+        }
+      ]
+    }
   }
 }
 </script>
